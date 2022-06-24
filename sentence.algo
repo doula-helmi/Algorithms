@@ -1,0 +1,32 @@
+ALGORITHM sentence
+VAR
+    character:CHAR;
+    len,words_number,vowels_number:INTEGER;
+    phrase:STRING:="";
+    i:INTEGER:=0;
+BEGIN
+
+    WHILE (phrase[phrase.lenght]<>'.') DO
+        Read(character);
+            phrase=phrase+character;
+            i:=i+1;
+    END_WHILE
+
+    FOR i FROM 0 TO phrase.lenght-1 DO
+        IF (phrase[i]=' ') THEN
+            words_number=words_number+1; 
+        END_IF
+    END_FOR
+
+    FOR i FROM 0 TO phrase.lenght-1 DO
+        IF (phrase[i]='a' OR phrase[i]='e' OR phrase[i]='i' OR phrase[i]='o' OR phrase[i]='u' OR phrase[i]='y' OR
+            phrase[i]='A' OR phrase[i]='E' OR phrase[i]='I' OR phrase[i]='O' OR phrase[i]='U' OR phrase[i]='Y') THEN
+            vowels_number=vowels_number+1;
+        END_IF
+    END_FOR
+
+    Write("The length of the sentence is ",phrase.lenght);
+    Write("The number of words is ",words_number);
+    Write("The number of vowels is ",vowels_number);
+    
+END
